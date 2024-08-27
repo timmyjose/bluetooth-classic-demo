@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "bluetooth-classic-demo",
+    "name": "BluetoothClassicDemo",
     "slug": "bluetooth-classic-demo",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -12,16 +12,61 @@
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "bundleIdentifier": "com.timmyjose.bluetoothclassicdemo"
     },
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.BLUETOOTH",
+        "android.permission.BLUETOOTH_ADMIN",
+        "android.permission.ACCESS_FINE_LOCATION",
+        "android.permission.BLUETOOTH_CONNECT",
+        "android.permission.BLUETOOTH_SCAN",
+        "android.permission.BLUETOOTH_ADVERTISE"
+      ],
+      "package": "com.timmyjose.bluetoothclassicdemo"
     },
     "web": {
       "favicon": "./assets/favicon.png"
+    },
+    "plugins": [
+      [
+        "expo-build-properties",
+        {
+          "android": {
+            "minSdkVersion": 24,
+            "compileSdkVersion": 34,
+            "targetSdkVersion": 34,
+            "buildToolsVersion": "34.0.0"
+          },
+          "ios": {
+            "useFrameworks": "static",
+            "deploymentTarget": "13.4"
+          }
+        }
+      ],
+      [
+        "with-rn-bluetooth-classic",
+        {
+          "peripheralUsageDescription": "Allow myDevice to use check Bluetooth peripheral info",
+          "alwaysUsageDescription": "Allow myDevice to always use Bluetooth info"
+        }
+      ]
+    ],
+    "extra": {
+      "eas": {
+        "projectId": "1ee71846-056b-4488-b6c4-e2f1458f35db"
+      }
+    },
+    "runtimeVersion": {
+      "policy": "appVersion"
+    },
+    "updates": {
+      "url": "https://u.expo.dev/1ee71846-056b-4488-b6c4-e2f1458f35db"
     }
   }
 }
